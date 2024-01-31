@@ -47,9 +47,7 @@
     "handle": "embeddedassets",
     "name": "Embedded Assets",
     "schemaVersion": "1.0.0",
-    "class": "spicyweb\\embeddedassets\\Plugin",
-    "changelogUrl": "https://github.com/spicywebau/craft-embedded-assets/blob/3.x/CHANGELOG.md",
-    "downloadUrl": "https://github.com/spicywebau/craft-embedded-assets/archive/3.2.0.zip"
+    "class": "spicyweb\\embeddedassets\\Plugin"
   },
   "config": {
     "allow-plugins": {
