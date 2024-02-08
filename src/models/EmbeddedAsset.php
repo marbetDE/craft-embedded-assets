@@ -227,7 +227,7 @@ class EmbeddedAsset extends Model implements JsonSerializable
     public function getIframeSrc(array $params): string
     {
         if (!$this->_codeHasIframe()) {
-            throw new Exception('The embedded asset code does not contain an iframe');
+            return '';
         }
 
         return $this->_getIframeSrc($params, true);
@@ -245,6 +245,11 @@ class EmbeddedAsset extends Model implements JsonSerializable
     public function getIframeCode(array $params = [], array $attributes = [], array $removeAttributes = []): TwigMarkup
     {
         $newSrc = $this->getIframeSrc($params);
+
+        if (empty($newSrc)) {
+            return Template::raw('');
+        }
+
         $tagAttributes = ['src' => $newSrc];
 
         foreach ($attributes as $attribute) {
